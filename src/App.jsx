@@ -6,15 +6,18 @@ import './App.css'
 function App() {  
   const [row, setRow] = useState([]);
 
-  if( row.length === 0 ) {
-    fetch("http://openAPI.seoul.go.kr:8088/78636e4e496269673634556a795559/json/RealtimeCityAir/1/25/").then(
-      function(res2) {
-        res2.json().then(function(res3) {
-          setRow(res3.RealtimeCityAir.row);
+  const click = () =>{
+    if( row.length === 0 ) {
+      fetch("http://openAPI.seoul.go.kr:8088/78636e4e496269673634556a795559/json/RealtimeCityAir/1/25/")
+      .then(function(res2) {
+          res2.json()
+          .then(function(res3) {
+            setRow(res3.RealtimeCityAir.row);
+          })
         })
-      }
-    )
-  }
+    }
+  };
+  
 
   
   console.log(row);
@@ -33,7 +36,8 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Vite + Resort</h1>
+      <h1>Vite + React</h1>
+      <button onClick = {click}>LOAD</button>
       <table>
         <thead>
           <th>이름</th>
