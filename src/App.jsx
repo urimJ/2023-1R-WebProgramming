@@ -47,13 +47,13 @@ function App() {
         </thead>
         <tbody>
           {
-          row.map(function(obj) {
-            return <tr>
-              <td>{obj.MSRSTE_NM}</td>
-              <td>{obj.PM10}</td>
-              <td>{obj.O3}</td>
-              <td>{obj.IDEX_NM}</td>
-              </tr>
+          row.map((gu, index)=>{
+            return (<tr key={index}>
+              <td>{gu.MSRSTE_NM}</td>
+              <td>{gu.PM10}</td>
+              <td>{gu.O3}</td>
+              <td>{gu.IDEX_NM}</td>
+              </tr>)
           })
           }
         </tbody>

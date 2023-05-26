@@ -6,6 +6,6 @@ import Worldcup from './Worldcup.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Worldcup />
+    <App />
   </React.StrictMode>,
 )
